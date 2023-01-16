@@ -147,7 +147,7 @@ namespace Cadastro_Leitor
                 ClearTextBoxes();
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
@@ -217,7 +217,7 @@ namespace Cadastro_Leitor
             this.dataGridView1.Columns["enderecoNumero"].HeaderText = "Número";            
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 
@@ -404,11 +404,6 @@ namespace Cadastro_Leitor
                 e = null;
             }
             base.OnKeyPress(e);
-
-        }
-
-        private void sexo_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

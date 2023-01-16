@@ -95,8 +95,6 @@ namespace Reserva
                 MessageBox.Show("Nome do leitor é obrigatorio. ");
                 return;
             }
-           
-            //public static byte ToByte(string? value);
 
             var reserva = new Reservaa()
             {
@@ -128,7 +126,7 @@ namespace Reserva
             {
                 reserva.Salvar(reserva);
                 this.formatColumns();
-                //MessageBox.Show("Cadastro feito com sucesso!");
+                MessageBox.Show("Cadastro feito com sucesso!");
             }
 
             SelectTable();
@@ -229,7 +227,7 @@ namespace Reserva
             this.dataGridView1.Columns["numReserva"].HeaderText = "Número da reserva";
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 
@@ -300,7 +298,7 @@ namespace Reserva
 
                 MessageBox.Show("Item Carregado com sucesso!");
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 
                 MessageBox.Show("Item inexistente!");
@@ -343,7 +341,6 @@ namespace Reserva
             DataGridViewRow row = dataGridView1.Rows[indexRow];
 
             codItem.Text = $"{row.Cells["codItem"].Value}";
-            //intencao.Text = $"{row.Cells["situacao"].Value}";
             nomeItem.Text = $"{row.Cells["nomeItem"].Value}";
             numExemplar.Text = $"{row.Cells["numExemplar"].Value}";
             tipoItem.Text = $"{row.Cells["tipoItem"].Value}";

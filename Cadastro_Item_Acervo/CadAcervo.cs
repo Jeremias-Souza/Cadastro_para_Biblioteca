@@ -1,16 +1,7 @@
-﻿//using Biblioteca_Estágio;
-using Cadastro_Editora;
-using Cadastro_Local;
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tabelas;
 using Editora = Tabelas.Editora;
@@ -21,7 +12,7 @@ namespace Cadastro_Item_Acervo
     public partial class CadAcervo : Form
     {
         public int indexRow { get; private set; }
-        string[] items = new string[20];
+        //string[] items = new string[20];
 
         public CadAcervo()
         {
@@ -107,7 +98,6 @@ namespace Cadastro_Item_Acervo
                 anoEdicao = this.anoEdicao.Text,
                 localizacao = this.localizacao.Text,
                 secao = this.txtSecao.Text,
-                //descricaoSecao = this.labelSecao.Text,
                 idioma = this.idioma.Text,
                 codItem = string.IsNullOrEmpty(this.codItem.Text)
                 ? 0
@@ -147,7 +137,7 @@ namespace Cadastro_Item_Acervo
                 MessageBox.Show("Cadastro apagado com sucesso!");
                 ClearTextBoxes();
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
@@ -218,11 +208,10 @@ namespace Cadastro_Item_Acervo
             this.dataGridView1.Columns["Volume"].HeaderText = "Volume";
             this.dataGridView1.Columns["anoEdicao"].HeaderText = "Ano da edição";
             this.dataGridView1.Columns["localizacao"].HeaderText = "Código Prateleira";
-            //this.dataGridView1.Columns["secao"].HeaderText = "N° da seção";
             this.dataGridView1.Columns["idioma"].HeaderText = "Idioma";
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes() 
         {
             Action<Control.ControlCollection> func = null;
 
@@ -267,7 +256,7 @@ namespace Cadastro_Item_Acervo
                 }
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Autor inexistente!");
                 Console.WriteLine(ex.Message);
@@ -294,7 +283,7 @@ namespace Cadastro_Item_Acervo
                 }
                 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Editora inexistente!");
                 Console.WriteLine(ex.Message);
@@ -321,39 +310,12 @@ namespace Cadastro_Item_Acervo
                 }
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Local inexistente!");
                 Console.WriteLine(ex.Message);
             }
         }
-
-        private void secao_Leave(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    using (SqlConnection cn = new SqlConnection(Conn.Strcon))
-            //    {
-            //        cn.Open();
-
-            //        var sqlQuery = $"SELECT descricaoSecao FROM MvtbibSecao WHERE codSecao = {int.Parse(this.txtSecao.Text)}";
-            //        using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
-            //        {
-            //            using (DataTable dt = new DataTable())
-            //            {
-            //                da.Fill(dt);
-            //                this.labelSecao.Text = dt.Rows[0].Field<string>("descricaoSecao");
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex) //Mostra mensagem caso haver falha 
-            //{
-            //    MessageBox.Show("Seção inexistente!");
-            //    Console.WriteLine(ex.Message);
-            //}
-        }
-
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -435,9 +397,5 @@ namespace Cadastro_Item_Acervo
             }
         }
 
-        private void CadAcervo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

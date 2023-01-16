@@ -89,7 +89,6 @@ namespace Cadastro_Leitor
                     cn.Close();
                 }
             }
-
         }
     }
 }

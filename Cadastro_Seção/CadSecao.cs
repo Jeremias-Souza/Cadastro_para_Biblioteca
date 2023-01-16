@@ -98,7 +98,7 @@ namespace Cadastro_Seção
                 ClearTextBoxes();
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
 
                 MessageBox.Show("Falha! \n" + ex.Message);
@@ -115,7 +115,7 @@ namespace Cadastro_Seção
             this.dataGridView1.Columns["descricaoSecao"].HeaderText = "Descrição";
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 

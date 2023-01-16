@@ -1,40 +1,10 @@
-﻿using DnsClient.Protocol;
-using Microsoft.Win32;
-using Newtonsoft.Json.Converters;
-using RazorEngine.Compilation.ImpromptuInterface.InvokeExt;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
-using System.IO;
-using System.Windows.Controls.Primitives;
-using System.Data.Common.CommandTrees.ExpressionBuilder;
-using System.Windows.Controls;
 using Control = System.Windows.Forms.Control;
 using TextBox = System.Windows.Forms.TextBox;
-using System.Globalization;
-using AventStack.ExtentReports.Gherkin.Model;
 using Microsoft.VisualBasic;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using CharacterCasing = System.Windows.Forms.CharacterCasing;
-using static System.Net.Mime.MediaTypeNames;
-using Image = System.Drawing.Image;
-using System.Data.SqlTypes;
-using AventStack.ExtentReports.Model;
-using System.Collections.Immutable;
-using System.Data.Common;
-using Page = System.Windows.Controls.Page;
-using NetTopologySuite.Algorithm;
 
 namespace Biblioteca_Estágio
 {
@@ -76,7 +46,7 @@ namespace Biblioteca_Estágio
             this.formatColumns();
         }
        
-        private void AddAutor_Click(object sender, EventArgs e) //Botao para adicionar o autor 
+        private void AddAutor_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(NomeAutor.Text))
             {
@@ -100,7 +70,7 @@ namespace Biblioteca_Estágio
              
         }
 
-        private void btnDelete_Click(object sender, EventArgs e) //Botão para deletar autor
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente DELETAR o autor? ", "Cadastro_autor", MessageBoxButtons.YesNo) == DialogResult.No)
             {
@@ -113,7 +83,7 @@ namespace Biblioteca_Estágio
                 {
                     cn.Open();
 
-                    var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";  //Deleta o autor pelo código digitado na caixa de código
+                    var sqlQuery = "DELETE MvtBibAutor Where codAutor = '" + CodAutor.Text + "'" + "SELECT codAutor, nomeAutor, descricaoAutor FROM MvtBibAutor";
                     using (SqlDataAdapter da = new SqlDataAdapter(sqlQuery, cn))
                     {
                         using (DataTable dt = new DataTable())
@@ -126,7 +96,7 @@ namespace Biblioteca_Estágio
                 ClearTextBoxes();
                 SelectTable();
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }                  
@@ -149,7 +119,7 @@ namespace Biblioteca_Estágio
             this.dataGridView1.Columns["descricaoAutor"].HeaderText = "Descrição";            
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 
@@ -166,19 +136,14 @@ namespace Biblioteca_Estágio
             func(Controls);
         }
 
-        private void NomeAutor_KeyPress(object sender, KeyPressEventArgs e) //Aceitar apenas letras na caixa de texto do NomeAutor
+        private void NomeAutor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Strings.Asc(e.KeyChar) >= 48 & Strings.Asc(e.KeyChar) <= 57))
             {
                 e.Handled = true;
                 e = null;
             }       
-        }
-
-        private void CodAutor_KeyPress(object sender, KeyPressEventArgs e) //Poder apenas numeros na tabela de texto CodAutor 
-        {
-                 
-        }      
+        } 
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -190,9 +155,5 @@ namespace Biblioteca_Estágio
             InfAutor.Text = $"{row.Cells["descricaoAutor"].Value}";
         }
 
-        private void NomeAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

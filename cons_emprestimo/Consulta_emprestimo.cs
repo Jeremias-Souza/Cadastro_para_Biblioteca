@@ -161,9 +161,5 @@ namespace cons_emprestimo
             tela.Show();
         }
 
-        private void Consulta_emprestimo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

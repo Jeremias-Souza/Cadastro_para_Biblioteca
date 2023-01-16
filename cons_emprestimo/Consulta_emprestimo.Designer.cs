@@ -285,7 +285,6 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "Consulta_emprestimo";
             this.Text = "Consulta Emprestimo";
-            this.Load += new System.EventHandler(this.Consulta_emprestimo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

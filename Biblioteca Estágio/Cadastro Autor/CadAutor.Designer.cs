@@ -95,7 +95,6 @@
             this.CodAutor.Size = new System.Drawing.Size(45, 23);
             this.CodAutor.TabIndex = 1;
             this.CodAutor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CodAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CodAutor_KeyPress);
             // 
             // NomeAutor
             // 
@@ -107,7 +106,6 @@
             this.NomeAutor.Name = "NomeAutor";
             this.NomeAutor.Size = new System.Drawing.Size(179, 23);
             this.NomeAutor.TabIndex = 2;
-            this.NomeAutor.TextChanged += new System.EventHandler(this.NomeAutor_TextChanged);
             this.NomeAutor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomeAutor_KeyPress);
             // 
             // InfAutor

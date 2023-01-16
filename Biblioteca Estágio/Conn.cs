@@ -17,7 +17,6 @@ namespace Biblioteca_Estágio
         private static string user = "sa";
         private static string password = "05092002";
 
-
         public static string Strcon
         {
             get {return $"Data Source= {server}; Integrated Security=False; Initial Catalog= {dataBase};User ID={user}; Password={password}";}

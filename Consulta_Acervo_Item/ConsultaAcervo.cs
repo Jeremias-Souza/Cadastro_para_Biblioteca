@@ -250,7 +250,7 @@ namespace Consulta_Acervo_Item
                     MessageBox.Show("Item Carregado com sucesso!");
                 }
 
-                catch (Exception ex) //Mostra mensagem caso haver falha 
+                catch (Exception ex)
                 {
                     MessageBox.Show("Item inexistente!");
                     Console.WriteLine(ex.Message);

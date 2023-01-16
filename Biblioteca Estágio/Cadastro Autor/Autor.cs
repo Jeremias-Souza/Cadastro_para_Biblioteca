@@ -15,8 +15,6 @@ namespace Biblioteca_Estágio
         public int codAutor { get; set; }
         public string nomeAutor { get; set; }
         public string descricaoAutor { get; set; }
-        
-      
 
         public void Salvar()
         {
@@ -60,29 +58,7 @@ namespace Biblioteca_Estágio
                     cn.Close();
                 }
             }
-
-
-
-
-
         }
                  
-        /*private byte[] GetFoto(string caminhoFoto)
-        {
-                      
-                byte[] foto;
-                using (var stream = new FileStream(caminhoFoto, FileMode.Open, FileAccess.Read))
-                {
-
-                    using (var reader = new BinaryReader(stream))
-                    {
-                        foto = reader.ReadBytes((int)stream.Length);
-                    }
-                }
-
-
-                return foto;
-            
-        }*/
     } 
 }

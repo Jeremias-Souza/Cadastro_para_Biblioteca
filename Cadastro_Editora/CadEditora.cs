@@ -99,7 +99,7 @@ namespace Cadastro_Editora
                 ClearTextBoxes();
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {            
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
@@ -107,21 +107,19 @@ namespace Cadastro_Editora
        
         private void formatColumns()
         {
-            //Cód editora
+
             this.dataGridView1.Columns["CodEditora"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
 
-            //Nome editora
             this.dataGridView1.Columns["Nome"]
                 .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             this.dataGridView1.Columns["CodEditora"].HeaderText = "Código";
             this.dataGridView1.Columns["Nome"].HeaderText = "Nome";
-
-            
+         
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 

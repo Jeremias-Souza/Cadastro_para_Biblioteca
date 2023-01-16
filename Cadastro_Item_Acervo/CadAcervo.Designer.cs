@@ -306,7 +306,6 @@
             this.txtSecao.Name = "txtSecao";
             this.txtSecao.Size = new System.Drawing.Size(45, 20);
             this.txtSecao.TabIndex = 15;
-            this.txtSecao.Leave += new System.EventHandler(this.secao_Leave);
             // 
             // localizacao
             // 
@@ -506,7 +505,6 @@
             this.MinimumSize = new System.Drawing.Size(1364, 447);
             this.Name = "CadAcervo";
             this.Text = "Cadastro do Acervo";
-            this.Load += new System.EventHandler(this.CadAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

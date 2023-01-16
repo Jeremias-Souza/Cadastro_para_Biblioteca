@@ -17,9 +17,5 @@ namespace Reserva
         {
             get { return $"Data Source= {server}; Integrated Security=False; Initial Catalog= {dataBase};User ID={user}; Password={password}"; }
         }
-
-
     }
-
-    
 }

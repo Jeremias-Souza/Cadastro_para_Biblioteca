@@ -390,7 +390,6 @@
             this.sexo.Name = "sexo";
             this.sexo.Size = new System.Drawing.Size(121, 21);
             this.sexo.TabIndex = 3;
-            this.sexo.SelectedIndexChanged += new System.EventHandler(this.sexo_SelectedIndexChanged);
             this.sexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sexo_KeyPress);
             // 
             // enderecoCidade

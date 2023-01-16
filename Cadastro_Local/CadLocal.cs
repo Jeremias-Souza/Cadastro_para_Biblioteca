@@ -99,7 +99,7 @@ namespace Cadastro_Local
                 ClearTextBoxes();
 
             }
-            catch (Exception ex) //Mostra mensagem caso haver falha 
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha! \n" + ex.Message);
             }
@@ -118,7 +118,7 @@ namespace Cadastro_Local
             this.dataGridView1.Columns["descricaoLocal"].HeaderText = "Descrição";
         }
 
-        private void ClearTextBoxes() //Função para limpar formularios depois de salvar
+        private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
 
